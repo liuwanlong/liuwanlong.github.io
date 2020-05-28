@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Echarts在微信小程序苹果设备环境下渲染问题 | 初来乍到</title>
+    <meta name="description" content="生活不精致，code要精致！">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.d6dab8b5.css" as="style"><link rel="preload" href="/assets/js/app.1248743d.js" as="script"><link rel="preload" href="/assets/js/2.231adfb7.js" as="script"><link rel="preload" href="/assets/js/20.37c4918e.js" as="script"><link rel="preload" href="/assets/js/7.d4093780.js" as="script"><link rel="prefetch" href="/assets/js/10.264e27b0.js"><link rel="prefetch" href="/assets/js/11.7b69e2e3.js"><link rel="prefetch" href="/assets/js/12.528bfc90.js"><link rel="prefetch" href="/assets/js/13.762436f0.js"><link rel="prefetch" href="/assets/js/14.c9ffbfd7.js"><link rel="prefetch" href="/assets/js/15.e3b9f040.js"><link rel="prefetch" href="/assets/js/16.89bfdb55.js"><link rel="prefetch" href="/assets/js/17.deb08d0a.js"><link rel="prefetch" href="/assets/js/18.2962ea6a.js"><link rel="prefetch" href="/assets/js/19.0f9bbb4b.js"><link rel="prefetch" href="/assets/js/21.b448eda6.js"><link rel="prefetch" href="/assets/js/22.acd2ea32.js"><link rel="prefetch" href="/assets/js/23.3cf12795.js"><link rel="prefetch" href="/assets/js/24.bbb5be84.js"><link rel="prefetch" href="/assets/js/3.433b0ecb.js"><link rel="prefetch" href="/assets/js/4.668be3e8.js"><link rel="prefetch" href="/assets/js/5.a80b3604.js"><link rel="prefetch" href="/assets/js/6.1539c2b1.js"><link rel="prefetch" href="/assets/js/8.ad61e7ad.js"><link rel="prefetch" href="/assets/js/9.99f6a5d8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6dab8b5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">初来乍到</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link">导航</a></div><div class="nav-item"><a href="/问题记录/" class="nav-link">问题记录</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于网站</a></div><div class="nav-item"><a href="https://github.com/liuwanlong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link">导航</a></div><div class="nav-item"><a href="/问题记录/" class="nav-link">问题记录</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于网站</a></div><div class="nav-item"><a href="https://github.com/liuwanlong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="echarts在微信小程序苹果设备环境下渲染问题"><a href="#echarts在微信小程序苹果设备环境下渲染问题" class="header-anchor">#</a> Echarts在微信小程序苹果设备环境下渲染问题</h2> <h3 id="先说一下详细问题吧："><a href="#先说一下详细问题吧：" class="header-anchor">#</a> 先说一下详细问题吧：</h3> <p>一个伸缩列表组件，点击打开item，item内的echarts图渲染显示异常，会缩的很小</p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>本页面是内嵌在小程序内的web-view的，React + echarts</p></div> <p>另外：</p> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>仅在苹果微信小程序端发现问题，chrome、safari、安卓、苹果微信浏览器没有问题</p></div> <h3 id="解决办法："><a href="#解决办法：" class="header-anchor">#</a> 解决办法：</h3> <p>经过排查，怀疑是伸缩列表在display切换的时候，echarts没有正确响应宽度变化导致的渲染异常，看代码：</p> <h4 id="render"><a href="#render" class="header-anchor">#</a> render</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token operator">&lt;</span>Accordion className<span class="token operator">=</span><span class="token string">'radarM-stock__menu'</span> <span class="token keyword">as</span><span class="token operator">=</span><span class="token punctuation">{</span>Menu<span class="token punctuation">}</span> vertical<span class="token operator">&gt;</span>
+      <span class="token punctuation">{</span>
+        items<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>Menu<span class="token punctuation">.</span>Item key<span class="token operator">=</span><span class="token punctuation">{</span>index<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>Accordion<span class="token punctuation">.</span>Title
+              index<span class="token operator">=</span><span class="token punctuation">{</span>index<span class="token punctuation">}</span>
+              active<span class="token operator">=</span><span class="token punctuation">{</span>activeIndex <span class="token operator">===</span> index<span class="token punctuation">}</span>
+              content<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span>
+                <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>标题<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+              <span class="token punctuation">)</span><span class="token punctuation">}</span>
+              onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>Accordion<span class="token punctuation">.</span>Content
+              active<span class="token operator">=</span><span class="token punctuation">{</span>activeIndex <span class="token operator">===</span> index<span class="token punctuation">}</span>
+              content<span class="token operator">=</span><span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">renderListItemContent</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> index<span class="token punctuation">)</span>
+              <span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>Menu<span class="token punctuation">.</span>Item<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Accordion<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="renderlistitemcontent函数"><a href="#renderlistitemcontent函数" class="header-anchor">#</a> renderListItemContent函数</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">renderListItemContent</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">&quot;财务操纵&quot;</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span><span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>React<span class="token punctuation">.</span>Fragment<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>财务操纵图<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>ReactEcharts
+                className<span class="token operator">=</span><span class="token string">&quot;echarts&quot;</span>
+                option<span class="token operator">=</span><span class="token punctuation">{</span>charts<span class="token punctuation">[</span><span class="token string">'财务操纵'</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+                style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+                  width<span class="token punctuation">:</span> <span class="token string">'100%'</span><span class="token punctuation">,</span>
+                  height<span class="token punctuation">:</span> <span class="token string">'17rem'</span><span class="token punctuation">,</span>
+                  margin<span class="token punctuation">:</span> <span class="token string">'2rem auto 0'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>React<span class="token punctuation">.</span>Fragment<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 有很多种switch item ，这里就只写了一个</span>
+</code></pre></div><p>代码大概就是这样，我们可以看到，以上的逻辑，其实在代码执行时，
+echarts已经渲染好了，我们要做的就是延迟渲染，在点击列表项时，
+再让echarts进行渲染。话不多说，看代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">renderListItemContent</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> activeIndex <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">;</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">&quot;财务操纵&quot;</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span><span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>React<span class="token punctuation">.</span>Fragment<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>财务操纵图<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span>
+              <span class="token comment">// 根据state控制是否渲染加载</span>
+              activeIndex <span class="token operator">===</span> index <span class="token operator">&amp;&amp;</span> 
+              <span class="token operator">&lt;</span>ReactEcharts
+                className<span class="token operator">=</span><span class="token string">&quot;echarts&quot;</span>
+                option<span class="token operator">=</span><span class="token punctuation">{</span>charts<span class="token punctuation">[</span><span class="token string">'财务操纵'</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+                style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span>
+                  width<span class="token punctuation">:</span> <span class="token string">'100%'</span><span class="token punctuation">,</span>
+                  height<span class="token punctuation">:</span> <span class="token string">'17rem'</span><span class="token punctuation">,</span>
+                  margin<span class="token punctuation">:</span> <span class="token string">'2rem auto 0'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token punctuation">}</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>React<span class="token punctuation">.</span>Fragment<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样echarts就会在激活当前列表项display时才会加载echarts，而且
+这样每次打开会发现echarts的图都会有动画效果。</p> <p>OK,fine!</p> <div id="gitalk-container"></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.1248743d.js" defer></script><script src="/assets/js/2.231adfb7.js" defer></script><script src="/assets/js/20.37c4918e.js" defer></script><script src="/assets/js/7.d4093780.js" defer></script>
+  </body>
+</html>

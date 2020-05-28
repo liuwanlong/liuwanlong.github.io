@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Go mod开发模式，告别$GOPATH | 初来乍到</title>
+    <meta name="description" content="生活不精致，code要精致！">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.d6dab8b5.css" as="style"><link rel="preload" href="/assets/js/app.1248743d.js" as="script"><link rel="preload" href="/assets/js/2.231adfb7.js" as="script"><link rel="preload" href="/assets/js/11.7b69e2e3.js" as="script"><link rel="preload" href="/assets/js/7.d4093780.js" as="script"><link rel="prefetch" href="/assets/js/10.264e27b0.js"><link rel="prefetch" href="/assets/js/12.528bfc90.js"><link rel="prefetch" href="/assets/js/13.762436f0.js"><link rel="prefetch" href="/assets/js/14.c9ffbfd7.js"><link rel="prefetch" href="/assets/js/15.e3b9f040.js"><link rel="prefetch" href="/assets/js/16.89bfdb55.js"><link rel="prefetch" href="/assets/js/17.deb08d0a.js"><link rel="prefetch" href="/assets/js/18.2962ea6a.js"><link rel="prefetch" href="/assets/js/19.0f9bbb4b.js"><link rel="prefetch" href="/assets/js/20.37c4918e.js"><link rel="prefetch" href="/assets/js/21.b448eda6.js"><link rel="prefetch" href="/assets/js/22.acd2ea32.js"><link rel="prefetch" href="/assets/js/23.3cf12795.js"><link rel="prefetch" href="/assets/js/24.bbb5be84.js"><link rel="prefetch" href="/assets/js/3.433b0ecb.js"><link rel="prefetch" href="/assets/js/4.668be3e8.js"><link rel="prefetch" href="/assets/js/5.a80b3604.js"><link rel="prefetch" href="/assets/js/6.1539c2b1.js"><link rel="prefetch" href="/assets/js/8.ad61e7ad.js"><link rel="prefetch" href="/assets/js/9.99f6a5d8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d6dab8b5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">初来乍到</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link">导航</a></div><div class="nav-item"><a href="/问题记录/" class="nav-link">问题记录</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于网站</a></div><div class="nav-item"><a href="https://github.com/liuwanlong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link">导航</a></div><div class="nav-item"><a href="/问题记录/" class="nav-link">问题记录</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于网站</a></div><div class="nav-item"><a href="https://github.com/liuwanlong" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="go-mod开发模式，告别-gopath"><a href="#go-mod开发模式，告别-gopath" class="header-anchor">#</a> Go mod开发模式，告别$GOPATH</h2> <h3 id="基本介绍"><a href="#基本介绍" class="header-anchor">#</a> 基本介绍</h3> <p>go mod 是go新版本推出的工具，从此就基本不用再费时操作gopath了</p> <h4 id="_1-创建项目"><a href="#_1-创建项目" class="header-anchor">#</a> 1.创建项目</h4> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">mkdir</span> mod-test
+<span class="token builtin class-name">cd</span> mod-tect
+
+go mod init mod-test
+
+// ls就能看到多了一个go.mod，这就初始化好了
+</code></pre></div><h4 id="_2-添加依赖-以gin为例"><a href="#_2-添加依赖-以gin为例" class="header-anchor">#</a> 2.添加依赖(以gin为例)</h4> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// server.go</span>
+<span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;github.com/gin-gonic/gin&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	r <span class="token operator">:=</span> gin<span class="token punctuation">.</span><span class="token function">Default</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	r<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">&quot;/ping&quot;</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		c<span class="token punctuation">.</span><span class="token function">JSON</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> gin<span class="token punctuation">.</span>H<span class="token punctuation">{</span>
+			<span class="token string">&quot;message&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;pong&quot;</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+	r<span class="token punctuation">.</span><span class="token function">Run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// listen and serve on 0.0.0.0:8080 (for windows &quot;localhost:8080&quot;)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接下来运行</p> <div class="language-bash extra-class"><pre class="language-bash"><code>go run server.go
+
+// 你会看到一些列类似于finding github依赖的信息，看到下边这些，就成功了
+<span class="token punctuation">[</span>GIN-debug<span class="token punctuation">]</span> <span class="token punctuation">[</span>WARNING<span class="token punctuation">]</span> Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+<span class="token punctuation">[</span>GIN-debug<span class="token punctuation">]</span> <span class="token punctuation">[</span>WARNING<span class="token punctuation">]</span> Running <span class="token keyword">in</span> <span class="token string">&quot;debug&quot;</span> mode. Switch to <span class="token string">&quot;release&quot;</span> mode <span class="token keyword">in</span> production.
+ - using env:   <span class="token builtin class-name">export</span> <span class="token assign-left variable">GIN_MODE</span><span class="token operator">=</span>release
+ - using code:  gin.SetMode<span class="token punctuation">(</span>gin.ReleaseMode<span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span>GIN-debug<span class="token punctuation">]</span> GET    /ping                     --<span class="token operator">&gt;</span> main.main.func1 <span class="token punctuation">(</span><span class="token number">3</span> handlers<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>GIN-debug<span class="token punctuation">]</span> Environment variable PORT is undefined. Using port :8080 by default
+<span class="token punctuation">[</span>GIN-debug<span class="token punctuation">]</span> Listening and serving HTTP on :8080
+</code></pre></div><p>是不是很easy？不如你亲自试试~~</p> <p>接下来就可以开始愉快的go之旅了~~~</p> <h4 id="一些命令"><a href="#一些命令" class="header-anchor">#</a> 一些命令</h4> <ul><li>go list -m -u all 来检查可以升级的package</li> <li>go get -u need-upgrade-package 升级后会将新的依赖版本更新到go.mod</li> <li>go get -u 升级所有依赖</li></ul> <div id="gitalk-container"></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.1248743d.js" defer></script><script src="/assets/js/2.231adfb7.js" defer></script><script src="/assets/js/11.7b69e2e3.js" defer></script><script src="/assets/js/7.d4093780.js" defer></script>
+  </body>
+</html>
